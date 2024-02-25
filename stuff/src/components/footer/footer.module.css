@@ -1,0 +1,26 @@
+.footerWrap{
+    background-color: #191919;
+    border-radius: 10px;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialWrap{
+    display: flex;
+    align-items: center;
+}
+
+.footerIcons  {
+    fill: #576067;
+}
+
+.footerIcons:hover {
+    fill: #6C3EB8;
+}
+  
+.icon{
+    display: flex;
+    cursor: pointer;
+    padding: 0 10px;
+}

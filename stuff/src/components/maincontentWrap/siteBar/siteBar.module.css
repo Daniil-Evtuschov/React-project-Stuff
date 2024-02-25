@@ -1,0 +1,19 @@
+.siteBarWrap{
+    max-width: 305px;
+}
+h2{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+}
+.link{
+    text-decoration: none;
+
+}
+.linkDescription{
+    font-size: 15px;
+    color: #576067;
+}
