@@ -3,7 +3,7 @@ import Home from "../components/home/home"
 
 const StuffRoutes = ()=>(
     <Routes>
-        <Route index element = {<Home/>}/>
+        <Route path="Home" element={''}/>
     </Routes>
     )
 

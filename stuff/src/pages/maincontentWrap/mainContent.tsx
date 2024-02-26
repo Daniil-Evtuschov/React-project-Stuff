@@ -1,10 +1,10 @@
-import MainContent from "./mainContent/mainContent";
-import SiteBar from "./siteBar/siteBar";
+import MainContent from "../../components/poster/poster";
+import SiteBar from "../../components/siteBar/siteBar";
 import styleMainContentWrap from "./mainContentWrap.module.css";
 
 const MainContentWrap = () => {
   return (
-    <div>
+    <div className={styleMainContentWrap.wrap}>
       <SiteBar/>
       <MainContent/>
     </div>

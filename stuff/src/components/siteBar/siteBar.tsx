@@ -6,14 +6,18 @@ const SiteBar = () => {
       <div className={styleSiteBar.titleWrap}><h2 className={styleSiteBar.title}>CATEGORIES</h2></div>
       <nav>
         <ul className={styleSiteBar.menu}>
-          <li>
-            <NavLink to={`/categories/${1}`}>Link</NavLink>
-          </li>
+          <li>Computers</li>
+          <li>Clothes</li>
+          <li>Shoes</li>
+          <li>Furniture</li>
+          <li>Cosmetics</li>
+          <li>Travel</li>
+          <li>Automotive</li>
         </ul>
       </nav>
       <div className={styleSiteBar.footer}> 
-        <a href="#" target="blank" className={styleSiteBar.link}><p className={styleSiteBar.linkDescription}>Help</p></a>
-        <a href="#" target="blank" className={styleSiteBar.link}><p className={styleSiteBar.linkDescription} style={{textDecoration:'underline'}}>Terms & Conditions</p></a>
+        <p className={styleSiteBar.linkDescription}>Help</p>
+        <p className={styleSiteBar.linkDescription} style={{textDecoration:'underline'}}>Terms & Conditions</p>
       </div>
     </div>
   )

@@ -1,0 +1,69 @@
+@import '../../fonts.module.css';
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    max-width: 950px;
+    flex-grow: 3;
+    position: relative;
+    padding: 0  42px;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.posetTitle{
+    font-size: 115px;
+    position: absolute;
+    z-index: 1;
+    top: -2%;
+    left: 2%;
+    margin: 0px;
+    color: #212123;
+    font-weight: 900;
+}
+
+.posterDescriptionWrap{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.imgWrap{
+    position: absolute;
+    z-index: 100;
+    right: 4%;
+    bottom: -4%;
+    display: flex;
+}
+
+.imgWrap img{
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.titleDescription{
+    font-weight: 500;
+    font-size: 16px;
+    color: #616E74;
+}
+
+.description{
+    font-weight: 700;
+    font-size: 42px;
+    color: #F6F6F7;
+}
+
+.posterButton{
+    margin-top: 24px;
+    padding: 10px 20px;
+    max-width: 125px;
+    background: #6C3EB8;
+    border: none;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}

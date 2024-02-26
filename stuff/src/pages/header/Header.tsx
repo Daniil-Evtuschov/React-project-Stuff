@@ -1,18 +1,17 @@
 import headerStyle from "./Header.module.css";
-import logo from "../../img/LOGO 1.svg";
 import Avatar from "../../img/avatar.svg";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import {ReactComponent as Cart} from "../../img/Vector.svg";
+import {ReactComponent as Favorite} from "../../img/17079954331574330926 1.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBagShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { Routes } from "../../utils/routes";
 
 const Header = () => {
   return (
     <form className={headerStyle.wrap}>
 
         <div className={headerStyle.logoWrap}>
-            <img className={headerStyle.logo} src={logo} alt="" />
+            <h1 className={headerStyle.mainTitle}>$TUFF</h1>
         </div>
             <div className={headerStyle.userWrap}>
                 <div className={headerStyle.userImgWrap}>
@@ -23,24 +22,20 @@ const Header = () => {
         <div className={headerStyle.inputWrap}>
             <span className={headerStyle.searchLoop}><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
             <input className={headerStyle.searchInput} 
-            autoComplete="off" 
             placeholder="Search for anything..." 
-            type="search"
-            name="search"
             onChange={()=>{}}
-            value=''
             />
         </div>
         <div className={headerStyle.headerIcons}>
-            <Link to = {Routes.cart}>
+            <Link to = {''}>
                 <div>
-                <span className={headerStyle.headerIcon}><FontAwesomeIcon icon={faHeart} /></span>
+                <span className={headerStyle.headerIcon}><Favorite className={headerStyle.favorite}/></span>
                 <span className={headerStyle.count}>2</span>
                 </div>
             </Link>
             
-            <Link to = {Routes.home}>
-                <span className={headerStyle.headerIcon}><FontAwesomeIcon icon={faBagShopping} /></span>
+            <Link to = {''}>
+                <span className={headerStyle.headerIcon}><Cart className={headerStyle.cart}/></span>
             </Link>  
         </div>
     </form>
