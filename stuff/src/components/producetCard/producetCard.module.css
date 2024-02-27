@@ -1,12 +1,12 @@
 .CardWrap{
     max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
 }
-
-.imgWrap{
-    max-width: 230px;
-    background-color: #ffff;
-}
-
 .img{
     object-position: center;
     object-fit: cover;
@@ -28,6 +28,8 @@
 }
 
 .cardDecription{
+    display: flex;
+    flex-grow: 2;
     position: relative;
     background-color: #212123;
     display: flex;
@@ -38,11 +40,10 @@
 .cardInfo{
     display: flex;
     justify-content: space-between;
+    margin-top: auto;
 }
 
-.cardPticeWrap{
 
-}
 .productModel{
     margin-bottom: 30px;
 }

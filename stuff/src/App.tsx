@@ -3,6 +3,7 @@ import Banner from './pages/baner/baner';
 import Cart from './pages/cart/cart';
 import Footer from './pages/footer/footer';
 import Header from './pages/header/Header';
+import LessProduct from './pages/leessProduct copy/LessProduct';
 import MainContentWrap from './pages/maincontentWrap/mainContent';
 import TrendingProduct from './pages/trendingProduct/trendingProduct';
 import WorthseeingProducet from './pages/worthseeingProducet/worthseeingProducet';
@@ -17,9 +18,9 @@ function App() {
         <Header/>
         <MainContentWrap/>
         <TrendingProduct/>
-        <WorthseeingProducet/>
+        <WorthseeingProducet  />
         <Banner/>
-        <TrendingProduct/>
+        <LessProduct/>
         <Cart/>
         <Footer/>
       </div>
