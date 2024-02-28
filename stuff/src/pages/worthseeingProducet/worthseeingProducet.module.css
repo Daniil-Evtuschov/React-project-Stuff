@@ -15,6 +15,7 @@
     flex-direction: column;
     max-width: 230px;
     align-items: center;
+    cursor: pointer;
 }
 
 .productName{

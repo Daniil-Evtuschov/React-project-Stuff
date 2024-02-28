@@ -3,13 +3,13 @@ import styleMainContent from "../../components/poster/poster.module.css";
 import ProducetCard from "../../components/producetCard/producetCard";
 import styleTrendingProduct from "../trendingProduct/trendingProduct.module.css";
 import { useDispatch, useSelector} from "react-redux";
-import { featchTrendsProductCards } from "../../store/actions/featchApi";
+import { featchLessProductCards } from "../../store/actions/featchApi";
 import { InitialStateInt } from "../../interfaces";
 import  {ProductCardInt} from "../../interfaces";
 
 const LessProduct = () => {
   const dispatch = useDispatch()
-  useEffect(()=>{dispatch(featchTrendsProductCards() as any)},[]);
+  useEffect(()=>{dispatch(featchLessProductCards() as any)},[]);
   const trendsProductcards =  useSelector((state:InitialStateInt)=>state.lessProductCards)   
 
   return (
@@ -18,10 +18,11 @@ const LessProduct = () => {
         <div className={styleTrendingProduct.trendingProductCardWrap}>
               {trendsProductcards.map((item:ProductCardInt)=>
                 <ProducetCard
+                description={item.description}
                 id={item.id} 
                 img={item.category.image} 
                 title={item.title} 
-                description={item.category.name} 
+                name={item.category.name} 
                 price={item.price + '$'}
                 newPrice={Math.floor(item.price* (80/100)) + '$'}
                 key={item.id}

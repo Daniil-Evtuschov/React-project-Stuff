@@ -1,26 +1,27 @@
 import { useDispatch, useSelector } from "react-redux";
 import styleTrendingProduct from "../trendingProduct/trendingProduct.module.css";
 import styleWorthseeingProducet from "./worthseeingProducet.module.css";
-import { InitialStateInt, ProductCardInt } from "../../interfaces";
+import { InitialStateInt, ProducetCardInt, ProductCardInt, WorthSeeingProductCardInt } from "../../interfaces";
 import { useEffect } from "react";
-import { featchLessProductCards } from "../../store/actions/featchApi";
+import { worthSeeingProductCards } from "../../store/actions/featchApi";
+import { singleProduct } from "../../store/actions/singleProduct";
 
 
 const WorthseeingProducet = () => {
   const dispatch = useDispatch()
-  useEffect(()=>{dispatch(featchLessProductCards() as any)},[]);
-
-  const lessProductcards =  useSelector((state:InitialStateInt)=>state.trendsProductCards) 
+  useEffect(()=>{dispatch(worthSeeingProductCards() as any)},[]);
+  const worthSeeingcards = useSelector((state:InitialStateInt)=>state.worthSeeingProductCards)   
+  console.log(worthSeeingcards);
 
   return (
     <div className={styleTrendingProduct.trendingProductWrap}>
         <h3 className={styleTrendingProduct.title}>Worth seeing</h3>
         <div className={styleTrendingProduct.trendingProductCardWrap}>
-          {lessProductcards.map((item:ProductCardInt)=>
-          <div key={item.id} className={styleWorthseeingProducet.cardWrap}>
-            <div className={styleWorthseeingProducet.imgWrap}><img src={item.category.image} alt="" /></div>
-            <span  className={styleWorthseeingProducet.productName}>{item.title}</span>
-          </div>
+          {worthSeeingcards.map((item:ProductCardInt)=>
+            <div onClick={()=>{dispatch(singleProduct(item))}} key={item.id} className={styleWorthseeingProducet.cardWrap}>
+              <div className={styleWorthseeingProducet.imgWrap}><img src={item.category.image} alt="" /></div>
+              <span  className={styleWorthseeingProducet.productName}>{item.category.name}</span>
+            </div>
           )}
         </div>
     </div>
@@ -30,3 +31,12 @@ const WorthseeingProducet = () => {
 export default WorthseeingProducet
 
 
+// export interface ProducetCardInt{
+//   id:number
+//   img:string;
+//   title:string;
+//   name:string;
+//   price:number | string;
+//   newPrice:number | string;
+//   description:string
+// }

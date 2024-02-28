@@ -1,0 +1,152 @@
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    background-color: #191919;
+    margin-left: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 24px;
+}
+
+.wrapImg{
+    max-width: 375px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.wrapImg img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.productInfoWrap{
+    display: flex;
+}
+
+.otherProducts{
+    display: flex;
+    flex-direction: column;
+}
+
+.otherImgWrap{
+    margin: 2.5px;
+    max-width: 90px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.otherImgWrap img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.ProductInfo{
+    display: flex;
+    flex-direction: column;
+    max-width: 385px;
+    margin-left: 30px;
+}
+
+.productName{
+    color: #F6F6F7;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.productPrice{
+    color: #F6F6F7;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.productParameters{
+    margin-bottom: 16px;
+}
+
+.productSizeWrap{
+    margin-bottom: 16px;
+}
+
+.productColor:first-child{
+    color: #576067;
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 16px;
+}
+
+.productColor:last-child{
+    color: #F6F6F7;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.productSize:nth-child(2){
+    color: #576067;
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 16px;
+}
+.productSize:nth-child(3){
+    color: #F6F6F7;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 4px 8px;
+    background-color: #212123;
+    border-radius: 10px;
+}
+.productSize:nth-child(4){
+    color: #F6F6F7;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 4px 6px 4px 8px;
+    background-color: #6C3EB8;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+.productSize:nth-child(5){
+    color: #F6F6F7;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 4px 8px;
+    background-color: #212123;
+    border-radius: 10px;
+}
+
+.productDescriptionWrap{
+    margin-bottom: 16px;
+}
+
+.productDescription{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.productButton:first-child{
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #6C3EB8;
+    border: none;
+    border-radius: 5px;
+    padding: 9px 25px;
+}
+
+.productButton:last-child{
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #B8B8B8;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 9px 25px;
+}

@@ -12,7 +12,6 @@ const TrendingProduct = () => {
   const dispatch = useDispatch()
   useEffect(()=>{dispatch(featchTrendsProductCards() as any)},[]);
   const trendsProductcards =  useSelector((state:InitialStateInt)=>state.trendsProductCards)   
-  let peoplePurchased = Math.floor(Math.random()*1000)*1
 
   return (
     <div className={styleTrendingProduct.trendingProductWrap}>
@@ -20,10 +19,11 @@ const TrendingProduct = () => {
         <div className={styleTrendingProduct.trendingProductCardWrap}>
               {trendsProductcards.map((item:ProductCardInt)=>
                 <ProducetCard
+                description={item.description}
                 id={item.id} 
                 img={item.category.image} 
                 title={item.title} 
-                description={item.category.name} 
+                name={item.category.name} 
                 price={item.price + '$'}
                 newPrice={Math.floor(item.price* (80/100)) + '$'}
                 key={item.id}

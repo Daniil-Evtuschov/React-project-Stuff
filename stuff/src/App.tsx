@@ -1,6 +1,5 @@
 import './App.css';
 import Banner from './pages/baner/baner';
-import Cart from './pages/cart/cart';
 import Footer from './pages/footer/footer';
 import Header from './pages/header/Header';
 import LessProduct from './pages/leessProduct copy/LessProduct';
@@ -21,7 +20,6 @@ function App() {
         <WorthseeingProducet  />
         <Banner/>
         <LessProduct/>
-        <Cart/>
         <Footer/>
       </div>
     </div>

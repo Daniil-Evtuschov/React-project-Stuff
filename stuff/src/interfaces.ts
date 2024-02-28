@@ -1,6 +1,8 @@
 export interface InitialStateInt {
     trendsProductCards: ProductCardInt[];
-    lessProductCards: ProductCardInt[]
+    lessProductCards: ProductCardInt[];
+    worthSeeingProductCards:ProductCardInt[];
+    singleCard?: ProducetCardInt;
 }
 
 export interface ActionsTypInt{
@@ -25,3 +27,20 @@ export interface ProductCardInt {
     updatedAt: string;
 }
 
+export interface WorthSeeingProductCardInt {
+    creationAt: string;
+    id: number;
+    image: string;
+    name: string;
+    updatedAt: string;
+}
+
+export interface ProducetCardInt{
+    id:number
+    img:string;
+    title:string;
+    name:string;
+    price:number | string;
+    newPrice:number | string;
+    description:string
+}
