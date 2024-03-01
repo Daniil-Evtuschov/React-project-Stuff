@@ -10,7 +10,7 @@ const ProducetCard = (props:ProducetCardInt) => {
     const dispatch = useDispatch()
     let peoplePurchased = Math.floor(Math.random()*1000)*1
   return (
-    <div onClick={()=>{dispatch(singleProduct(props))}} className={styleProducetCard.CardWrap} key={props.id}>
+    <div onClick={()=>{dispatch(singleProduct(props.allCardkeys))}} className={styleProducetCard.CardWrap} key={props.id}>
         <div className={styleProducetCard.imgWrap}><img className={styleProducetCard.img} src={props.img} alt="" /></div>
         
         <div  className={styleProducetCard.cardDecription}>

@@ -5,8 +5,10 @@ import {ReactComponent as Favorite} from "../../img/17079954331574330926 1.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+
   return (
     <form className={headerStyle.wrap}>
 

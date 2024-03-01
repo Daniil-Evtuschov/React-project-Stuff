@@ -1,12 +1,15 @@
 import { ActionsTypInt, InitialStateInt } from "../../interfaces"
 
+
 const initialState:InitialStateInt = {
     trendsProductCards:[],
+    otherProductCards:[],
     lessProductCards:[],
     worthSeeingProductCards:[],
 }
 
-const reducer = (state = initialState, action:ActionsTypInt | any)=>{
+
+export const apiReducer = (state: InitialStateInt = initialState, action: ActionsTypInt): InitialStateInt=>{
     switch (action.type) {
         case "SHOW_TRENDS_PRODUCT_CARDS":
             return{...state,trendsProductCards:action.payload}
@@ -27,4 +30,4 @@ const reducer = (state = initialState, action:ActionsTypInt | any)=>{
     }
 }
 
-export default reducer
+export default apiReducer
