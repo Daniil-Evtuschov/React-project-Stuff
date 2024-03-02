@@ -1,0 +1,67 @@
+.bannerWrap{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 35px;
+}
+
+.bunerTitleWrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+.title{
+    font-size: 70px;
+    font-weight: 300;
+    color: #6C3EB8;
+    text-align: center;
+}
+
+.titleWrap{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title:nth-child(2){
+    font-size: 150px;
+}
+
+.bannerLogoWrap{
+    position: relative;
+}
+
+.logoDescriptionWrap{
+    position: absolute;
+    right: 17%;
+    bottom: 5%;
+}
+
+.logoDescription{
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.logoDescription:nth-child(2){
+    color: #6C3EB8;
+    font-weight: 700;
+}
+
+.firstFoto{
+    position: absolute;
+    left: -2%;
+    bottom: 3%;
+}
+
+.secondFoto{
+    position: absolute;
+    left: 30.2%;
+    z-index: 20;
+    bottom: -5%;
+}
