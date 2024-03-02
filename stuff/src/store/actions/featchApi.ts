@@ -1,4 +1,4 @@
-import { store } from "../..";
+import { Dispatch } from "@reduxjs/toolkit";
 import { ProductCardInt, WorthSeeingProductCardInt } from "../../interfaces";
 
 export const getTrendsProductCards = (trendsCards:ProductCardInt[])=>({
@@ -7,7 +7,7 @@ export const getTrendsProductCards = (trendsCards:ProductCardInt[])=>({
 })
   
 
-export const featchTrendsProductCards = () => async (dispatch: typeof store.dispatch)=>{
+export const featchTrendsProductCards = () => async (dispatch: Dispatch)=>{
   const options = {
     method: 'GET',
     headers: {accept: 'application/json'}
@@ -22,7 +22,7 @@ export const featchTrendsProductCards = () => async (dispatch: typeof store.disp
 
 
 
-export const featchLessProductCards = () => async (dispatch: typeof store.dispatch)=>{
+export const featchLessProductCards = () => async (dispatch: Dispatch)=>{
 const options = {
   method: 'GET',
   headers: {accept: 'application/json'}
@@ -44,7 +44,7 @@ export const getLessCards = (lessdsCards:ProductCardInt[])=>({
 })
 
 
-export const worthSeeingProductCards = () => async (dispatch: typeof store.dispatch)=>{
+export const worthSeeingProductCards = () => async (dispatch: Dispatch)=>{
   const options = {
     method: 'GET',
     headers: {accept: 'application/json'}

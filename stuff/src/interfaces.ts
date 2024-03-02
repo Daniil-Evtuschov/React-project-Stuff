@@ -2,12 +2,13 @@ export interface InitialStateInt {
     trendsProductCards: ProductCardInt[];
     lessProductCards: ProductCardInt[];
     worthSeeingProductCards:ProductCardInt[];
-    singleCard?: ProducetCardInt;
+    singleCard?: ProductCardInt | null;
+    otherProductCards:ProductCardInt[]
 }
 
 export interface ActionsTypInt{
     type: string;
-    payload?:ProductCardInt[];
+    payload?:any;
 }
 
 export interface ProductCardInt {
@@ -42,5 +43,6 @@ export interface ProducetCardInt{
     name:string;
     price:number | string;
     newPrice:number | string;
-    description:string
+    description:string;
+    allCardkeys:ProductCardInt;
 }

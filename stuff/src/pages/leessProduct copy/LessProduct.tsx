@@ -6,17 +6,18 @@ import { useDispatch, useSelector} from "react-redux";
 import { featchLessProductCards } from "../../store/actions/featchApi";
 import { InitialStateInt } from "../../interfaces";
 import  {ProductCardInt} from "../../interfaces";
+import { useTypeSelector } from "../../hooks/useTypeSelector";
 
 const LessProduct = () => {
   const dispatch = useDispatch()
   useEffect(()=>{dispatch(featchLessProductCards() as any)},[]);
-  const trendsProductcards =  useSelector((state:InitialStateInt)=>state.lessProductCards)   
+  const lessCards =  useTypeSelector((state)=>state.Api.lessProductCards)   
 
   return (
     <div className={styleTrendingProduct.trendingProductWrap}>
         <h3 className={styleTrendingProduct.title}>Less than 100$</h3>
         <div className={styleTrendingProduct.trendingProductCardWrap}>
-              {trendsProductcards.map((item:ProductCardInt)=>
+              {(lessCards || []).map((item:ProductCardInt)=>
                 <ProducetCard
                 description={item.description}
                 id={item.id} 
@@ -26,6 +27,7 @@ const LessProduct = () => {
                 price={item.price + '$'}
                 newPrice={Math.floor(item.price* (80/100)) + '$'}
                 key={item.id}
+                allCardkeys={item}
                 />
               )}
         </div>
