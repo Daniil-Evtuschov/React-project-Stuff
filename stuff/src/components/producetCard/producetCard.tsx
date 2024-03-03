@@ -15,7 +15,7 @@ const ProducetCard = (props:ProducetCardInt) => {
         
         <div  className={styleProducetCard.cardDecription}>
             <span className={styleProducetCard.cardTitle}>{props.title}</span>
-            <span className={styleProducetCard.productModel}>{props.name}</span>
+            <span className={styleProducetCard.productModel}>{props.category}</span>
 
             <div className={styleProducetCard.cardInfo}>
                 <div className={styleProducetCard.cardPticeWrap}>

@@ -3,7 +3,8 @@ export interface InitialStateInt {
     lessProductCards: ProductCardInt[];
     worthSeeingProductCards:ProductCardInt[];
     singleCard?: ProductCardInt | null;
-    otherProductCards:ProductCardInt[]
+    otherProductCards:ProductCardInt[];
+    searchProductCard:ProductCardInt[];
 }
 
 export interface ActionsTypInt{
@@ -12,20 +13,16 @@ export interface ActionsTypInt{
 }
 
 export interface ProductCardInt {
-    category: {
-        creationAt: string;
-        id: number;
-        image: string;
-        name: string;
-        updatedAt: string;
-    };
-    creationAt: string;
+    category: string;
     description: string;
     id: number;
-    images: string[];
+    image: string;
     price: number;
+    rating: {
+        count: number;
+        rate: number;
+    };
     title: string;
-    updatedAt: string;
 }
 
 export interface WorthSeeingProductCardInt {
@@ -40,7 +37,7 @@ export interface ProducetCardInt{
     id:number
     img:string;
     title:string;
-    name:string;
+    category:string;
     price:number | string;
     newPrice:number | string;
     description:string;

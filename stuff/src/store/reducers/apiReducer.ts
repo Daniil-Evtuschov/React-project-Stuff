@@ -6,6 +6,7 @@ const initialState:InitialStateInt = {
     otherProductCards:[],
     lessProductCards:[],
     worthSeeingProductCards:[],
+    searchProductCard:[]
 }
 
 
@@ -25,6 +26,9 @@ export const apiReducer = (state: InitialStateInt = initialState, action: Action
 
         case "SHOW_OTHER_PRODUCT_CARDS":
             return{...state,otherProductCards:action.payload}
+            
+        case "SEARCH_FILIM_ID":
+            return{...state,searchProductCard:action.payload}
     default:
         return state
     }

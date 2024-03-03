@@ -5,10 +5,25 @@ import {ReactComponent as Favorite} from "../../img/17079954331574330926 1.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import Input from "../../components/input/input";
+import filmIdFinder from "../../store/actions/featchApi";
+import { useDispatch } from "react-redux";
+import { useTypeSelector } from "../../hooks/useTypeSelector";
 
 const Header = () => {
+    const dispatch = useDispatch()
+    const [searchValue, setSearchValue] = useState<string>('')
+    const searchResult = useTypeSelector((state)=>state.Api.searchProductCard) 
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            //@ts-ignore
+            dispatch(filmIdFinder(searchValue))  
+        }
+      };
 
+      console.log(searchResult);
+      
   return (
     <form className={headerStyle.wrap}>
 
@@ -23,10 +38,7 @@ const Header = () => {
             </div>
         <div className={headerStyle.inputWrap}>
             <span className={headerStyle.searchLoop}><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-            <input className={headerStyle.searchInput} 
-            placeholder="Search for anything..." 
-            onChange={()=>{}}
-            />
+            <Input onKeyDown={handleKeyPress} value={searchValue} onChange={setSearchValue} placeHolder={'Search for anything...'}/>
         </div>
         <div className={headerStyle.headerIcons}>
             <Link to = {''}>

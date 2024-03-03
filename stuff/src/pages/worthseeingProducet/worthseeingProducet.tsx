@@ -19,8 +19,8 @@ const WorthseeingProducet = () => {
           {(worthSeeingcards || []).map((item:ProductCardInt)=>
             <div onClick={()=>{dispatch(singleProduct(item))}} 
             key={item.id} className={styleWorthseeingProducet.cardWrap}>
-              <div className={styleWorthseeingProducet.imgWrap}><img src={item.category.image} alt="" /></div>
-              <span  className={styleWorthseeingProducet.productName}>{item.category.name}</span>
+              <div className={styleWorthseeingProducet.imgWrap}><img src={item.image} alt="" /></div>
+              <span  className={styleWorthseeingProducet.productName}>{item.category}</span>
             </div>
           )}
         </div>

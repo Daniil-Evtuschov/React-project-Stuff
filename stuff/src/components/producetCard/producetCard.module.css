@@ -7,9 +7,15 @@
     overflow: hidden;
     cursor: pointer;
 }
+
+.imgWrap{
+    max-height: 250px;
+    background-color: #ffff;
+}
+
 .img{
     object-position: center;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }

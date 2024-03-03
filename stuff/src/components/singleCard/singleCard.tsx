@@ -9,14 +9,15 @@ import { useTypeSelector } from "../../hooks/useTypeSelector";
 const SingleCard = () => {
   const dispatch = useDispatch();
   const singleProductCard =  useTypeSelector((state)=>state.Api.singleCard)   
-  const otherProductsCards = useTypeSelector((state)=>state.Api.worthSeeingProductCards)
-  let newPrice = singleProductCard?.price 
+  const otherProductsCards = useTypeSelector((state)=>state.Api.worthSeeingProductCards).slice(0,4)
+
+  let newPrice = singleProductCard?.price || 0
     const sizes = [4,4.5,5]  
-    let [curentSize, setCurentSize] :any= useState()
+    let [curentSize, setCurentSize] :any= useState('')
   return (
     <div className={styleSingleProducet.wrap}>
         <div className={styleSingleProducet.wrapImg}>
-            <img src={singleProductCard?.category.image} alt="" />
+            <img src={singleProductCard?.image} alt="" />
         </div>
 
         <div>
@@ -24,26 +25,26 @@ const SingleCard = () => {
                 <div className={styleSingleProducet.otherProducts}>
                 {(otherProductsCards || []).map((item:ProductCardInt)=>
                         <div key={item.id} onClick={()=>{dispatch(singleProduct(item))}} className={styleSingleProducet.otherImgWrap}>
-                        <img src={item.category.image} alt="" />
+                        <img src={item.image} alt="" />
                     </div>
                     )
                     }
                 </div>
                 <div className={styleSingleProducet.ProductInfo}>
                     <span className={styleSingleProducet.productName}>{singleProductCard?.title}</span>
-                    <span className={styleSingleProducet.productPrice}>{Math.floor(newPrice || 0* (80/100)) + '$'}</span>
+                    <span className={styleSingleProducet.productPrice}>{ Math.floor(newPrice * (80/100))     + '$'}</span>
                     
                     <div className={styleSingleProducet.productParameters}>
                         <div className={styleSingleProducet.productSizeWrap}>
-                            <span className={styleSingleProducet.productColor}>color:</span>
-                            <span className={styleSingleProducet.productColor}>red</span>
+                            <span className={styleSingleProducet.productColor}>cont</span>
+                            <span className={styleSingleProducet.productColor}>{singleProductCard?.rating.count}</span>
                         </div>
                         <span className={styleSingleProducet.productSizeText}>sizes:</span>
-                        {sizes.map(item=>
+                        {sizes.map(element=>
                         <span 
-                        onClick={()=>{setCurentSize(item)}} key={item}
-                        className={`${styleSingleProducet.productSize} ${curentSize===item? styleSingleProducet.active:''}`}>
-                            {item}
+                        onClick={()=>{setCurentSize(element)}} key={element}
+                        className={`${styleSingleProducet.productSize} ${curentSize===element? styleSingleProducet.active:''}`}>
+                            {element}
                         </span>)
                         
                         }
