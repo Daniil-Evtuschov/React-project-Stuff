@@ -2,7 +2,6 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { InitialStateInt } from '../../interfaces';
 import apiReducer from './apiReducer';
 
-
 export const rootReducer = combineReducers({
     Api: apiReducer
 })

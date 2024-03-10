@@ -4,32 +4,31 @@ import {ReactComponent as Cart} from "../../img/Vector.svg";
 import {ReactComponent as Favorite} from "../../img/17079954331574330926 1.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { KeyboardEvent, useEffect, useState } from "react";
 import Input from "../../components/input/input";
-import filmIdFinder from "../../store/actions/featchApi";
 import { useDispatch } from "react-redux";
 import { useTypeSelector } from "../../hooks/useTypeSelector";
+import apiSearchFilms from "./searchinput";
 
 const Header = () => {
     const dispatch = useDispatch()
     const [searchValue, setSearchValue] = useState<string>('')
     const searchResult = useTypeSelector((state)=>state.Api.searchProductCard) 
-    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             //@ts-ignore
-            dispatch(filmIdFinder(searchValue))  
+            dispatch(apiSearchFilms(searchValue))  
         }
       };
-
-      console.log(searchResult);
       
   return (
     <form className={headerStyle.wrap}>
-
+    <Link  to = {'/'}>
         <div className={headerStyle.logoWrap}>
             <h1 className={headerStyle.mainTitle}>$TUFF</h1>
         </div>
+    </Link>
             <div className={headerStyle.userWrap}>
                 <div className={headerStyle.userImgWrap}>
                     <img className={headerStyle.userImg} src={Avatar} alt="" />
@@ -38,7 +37,7 @@ const Header = () => {
             </div>
         <div className={headerStyle.inputWrap}>
             <span className={headerStyle.searchLoop}><FontAwesomeIcon icon={faMagnifyingGlass} /></span>
-            <Input onKeyDown={handleKeyPress} value={searchValue} onChange={setSearchValue} placeHolder={'Search for anything...'}/>
+            <Input onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => handleKeyPress(event)} value={searchValue} onChange={setSearchValue} placeHolder={'Search for anything...'}/>
         </div>
         <div className={headerStyle.headerIcons}>
             <Link to = {''}>

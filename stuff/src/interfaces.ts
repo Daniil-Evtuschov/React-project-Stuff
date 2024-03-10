@@ -5,6 +5,7 @@ export interface InitialStateInt {
     singleCard?: ProductCardInt | null;
     otherProductCards:ProductCardInt[];
     searchProductCard:ProductCardInt[];
+    relatedproducts:ProductCardInt[];
 }
 
 export interface ActionsTypInt{

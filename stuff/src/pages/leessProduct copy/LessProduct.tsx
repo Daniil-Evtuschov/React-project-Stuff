@@ -6,25 +6,30 @@ import { useDispatch} from "react-redux";
 import { featchLessProductCards } from "../../store/actions/featchApi";
 import  {ProductCardInt} from "../../interfaces";
 import { useTypeSelector } from "../../hooks/useTypeSelector";
+import { useParams } from "react-router-dom";
 
 const LessProduct = () => {
   const dispatch = useDispatch()
-  // useEffect(()=>{dispatch(featchLessProductCards('5') as any)},[]);
   const lessCards =  useTypeSelector((state)=>state.Api.lessProductCards)   
 
   useEffect(()=>{
     if (lessCards.length===0) {
       handlefiveProductCard()
     }},[]);
+    const {category,id} = useParams()
 
     const handlefiveProductCard =()=>{
       let result = lessCards.length+5
-
-      localStorage.setItem('massLenght',result.toString())
+      console.log('category',category);
+      
+      let validCatigoty = category
+      if (validCatigoty===undefined) {
+        validCatigoty=''
+      }else{validCatigoty=`/category/${category}`}
 
       if (result!=undefined) {
          
-      dispatch(featchLessProductCards(result.toString()) as any)          
+      dispatch(featchLessProductCards(result.toString(),validCatigoty) as any)          
       }
   }
 

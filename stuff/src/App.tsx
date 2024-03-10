@@ -14,13 +14,6 @@ function App() {
     <div className="App">
       <div className='container'>
         <StuffRoutes/>
-        <Header/>
-        <MainContentWrap/>
-        <TrendingProduct/>
-        <WorthseeingProducet  />
-        <Banner/>
-        <LessProduct/>
-        <Footer/>
       </div>
     </div>
   );

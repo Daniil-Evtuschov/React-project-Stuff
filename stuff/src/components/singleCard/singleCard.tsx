@@ -1,19 +1,26 @@
 import { useDispatch, useSelector } from "react-redux";
-import { InitialStateInt, ProductCardInt } from "../../interfaces";
+import { ProductCardInt } from "../../interfaces";
 import styleSingleProducet from "./singleCard.module.css";
-import { singleProduct } from "../../store/actions/singleProduct";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTypeSelector } from "../../hooks/useTypeSelector";
+import { worthSeeingProductCards } from "../../store/actions/featchApi";
+import { useParams } from "react-router-dom";
+import { fetchOnIdSingleCard, singleProduct } from "../../store/actions/singleProduct";
 
 
 const SingleCard = () => {
   const dispatch = useDispatch();
+  const {category,id} = useParams()
+  
+  useEffect(()=>{dispatch(worthSeeingProductCards() as any)},[]);
+  useEffect(()=>{dispatch(fetchOnIdSingleCard(id)as any)},[]);
+
   const singleProductCard =  useTypeSelector((state)=>state.Api.singleCard)   
   const otherProductsCards = useTypeSelector((state)=>state.Api.worthSeeingProductCards).slice(0,4)
 
   let newPrice = singleProductCard?.price || 0
     const sizes = [4,4.5,5]  
-    let [curentSize, setCurentSize] :any= useState('')
+    let [curentSize, setCurentSize] :any= useState('');
   return (
     <div className={styleSingleProducet.wrap}>
         <div className={styleSingleProducet.wrapImg}>
