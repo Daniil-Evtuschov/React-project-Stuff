@@ -55,7 +55,7 @@ export const worthSeeingProductCards = (catigory?:string|null) => async (dispatc
     method: 'GET',
     headers: {accept: 'application/json'}
 }; 
-    const response = await fetch(`https://fakestoreapi.com/products${catigory!=null?catigory:''}?limit=5`,options);
+    const response = await fetch(`https://fakestoreapi.com/products?limit=5`,options);
           
     const data = await response.json();
           

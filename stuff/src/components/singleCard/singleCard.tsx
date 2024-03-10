@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useTypeSelector } from "../../hooks/useTypeSelector";
 import { worthSeeingProductCards } from "../../store/actions/featchApi";
 import { useParams } from "react-router-dom";
-import { fetchOnIdSingleCard, singleProduct } from "../../store/actions/singleProduct";
+import { featchRelatedproducts, fetchOnIdSingleCard, singleProduct } from "../../store/actions/singleProduct";
 
 
 const SingleCard = () => {
@@ -17,7 +17,7 @@ const SingleCard = () => {
 
   const singleProductCard =  useTypeSelector((state)=>state.Api.singleCard)   
   const otherProductsCards = useTypeSelector((state)=>state.Api.worthSeeingProductCards).slice(0,4)
-
+  
   let newPrice = singleProductCard?.price || 0
     const sizes = [4,4.5,5]  
     let [curentSize, setCurentSize] :any= useState('');
@@ -31,7 +31,9 @@ const SingleCard = () => {
             <div className={styleSingleProducet.productInfoWrap}>
                 <div className={styleSingleProducet.otherProducts}>
                 {(otherProductsCards || []).map((item:ProductCardInt)=>
-                        <div key={item.id} onClick={()=>{dispatch(singleProduct(item))}} className={styleSingleProducet.otherImgWrap}>
+                        <div key={item.id} 
+                        onClick={()=>{dispatch(singleProduct(item));dispatch(featchRelatedproducts('5',`/category/${item.category}`) as any)}} 
+                        className={styleSingleProducet.otherImgWrap}>
                         <img src={item.image} alt="" />
                     </div>
                     )
