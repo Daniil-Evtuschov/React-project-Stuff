@@ -6,10 +6,18 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    height: 100%;
 }
+
+.imgWrap{
+    max-height: 250px;
+    background-color: #ffff;
+    height: 100%;
+}
+
 .img{
     object-position: center;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }

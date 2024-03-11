@@ -1,5 +1,7 @@
 import { Dispatch } from "@reduxjs/toolkit";
-import { ProductCardInt, WorthSeeingProductCardInt } from "../../interfaces";
+import { ProductCardInt} from "../../interfaces";
+import apiSearchFilms from "../../pages/header/searchinput";
+
 
 export const getTrendsProductCards = (trendsCards:ProductCardInt[])=>({
     type: 'SHOW_TRENDS_PRODUCT_CARDS',
@@ -7,35 +9,37 @@ export const getTrendsProductCards = (trendsCards:ProductCardInt[])=>({
 })
   
 
-export const featchTrendsProductCards = () => async (dispatch: Dispatch)=>{
+export const featchTrendsProductCards = (fiveCards:string,catigory?:string|null) => async (dispatch: Dispatch)=>{
+
   const options = {
     method: 'GET',
     headers: {accept: 'application/json'}
 }; 
-    const response = await fetch(`https://api.escuelajs.co/api/v1/products?limit=5&offset=1`,options);
+    const response = await fetch(`https://fakestoreapi.com/products${catigory!=null?catigory:''}`,options);
           
     const data = await response.json();
-    console.log('data 1',data);
-      
+    if (data.length>5) {
+      data.splice(fiveCards)
+    }
+    
     dispatch(getTrendsProductCards(data))     
 }
 
-
-
-export const featchLessProductCards = () => async (dispatch: Dispatch)=>{
+export const featchLessProductCards = (fiveCards:string,catigory?:string|null) => async (dispatch: Dispatch)=>{
 const options = {
   method: 'GET',
   headers: {accept: 'application/json'}
 }; 
-  const response = await fetch(`https://api.escuelajs.co/api/v1/products?limit=5&offset=2`,options);
-  // const response = await fetch(`https://api.escuelajs.co/api/v1/products/?price_min=5&price_max=100&offset=30&limit=5`,options);
-        
+  const response = await fetch(`https://fakestoreapi.com/products${catigory!=null?catigory:''}`,options);        
   const data = await response.json();
-  console.log('data 2',data);
-  
-  dispatch(getLessCards(data))     
-}
 
+  let newData = data.filter((item:ProductCardInt)=>item.price <= 100)
+  if (newData.length>5) {
+    newData.splice(fiveCards)
+  }
+  
+  dispatch(getLessCards(newData))     
+}
 
 
 export const getLessCards = (lessdsCards:ProductCardInt[])=>({
@@ -44,24 +48,32 @@ export const getLessCards = (lessdsCards:ProductCardInt[])=>({
 })
 
 
-export const worthSeeingProductCards = () => async (dispatch: Dispatch)=>{
+export const worthSeeingProductCards = (catigory?:string|null) => async (dispatch: Dispatch)=>{
   const options = {
     method: 'GET',
     headers: {accept: 'application/json'}
 }; 
-    const response = await fetch(`https://api.escuelajs.co/api/v1/products?limit=5&offset=3`,options);
+    const response = await fetch(`https://fakestoreapi.com/products?limit=5`,options);
           
     const data = await response.json();
-    
-    console.log('data3',data);
-      
+          
     dispatch(worthSeeingCards(data))     
 }
   
-  
-  
-  export const worthSeeingCards = (worthSeeingCards:ProductCardInt[])=>({
+
+export const worthSeeingCards = (worthSeeingCards:ProductCardInt[])=>({
     type: 'SHOW_WORTH_SEEING_PRODUCT_CARDS',
     payload: worthSeeingCards
-  })
-  
+})
+
+
+
+export const showSearchPost=(post:ProductCardInt[])=>({
+  type:'SEARCH_POST',
+  payload: post
+})
+
+export const searchPosts = (searchText:string) => async(dispatch: Dispatch)=>{
+  const data = await apiSearchFilms(searchText);
+  dispatch(showSearchPost(data))
+}
