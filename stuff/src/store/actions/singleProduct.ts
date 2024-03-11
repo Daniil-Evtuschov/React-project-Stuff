@@ -39,3 +39,7 @@ export const featchRelatedproducts = (fiveCards:string,catigory?:RequestInfo | U
     dispatch(getRelatedproducts(data))     
 }
 
+export const addToCart = (card:ProductCardInt[] | any[])=>({
+  type: 'ADD_TO_CART',
+  payload: card
+})

@@ -6,6 +6,7 @@ export interface InitialStateInt {
     otherProductCards:ProductCardInt[];
     searchProductCard:ProductCardInt[];
     relatedproducts:ProductCardInt[];
+    cart:ProductCardInt[];
 }
 
 export interface ActionsTypInt{

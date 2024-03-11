@@ -5,6 +5,7 @@ import Poster from "../components/poster/poster"
 import HomePage from "./Routs/layout"
 import SingleProductPage from "./Routs/Singleproduct"
 import SiteBar from "../components/siteBar/siteBar"
+import CartRoute from "./Routs/cartRoute/cartRoute"
 
 const StuffRoutes = ()=>(
     <Routes>
@@ -14,6 +15,7 @@ const StuffRoutes = ()=>(
         <Route path="/SingleProductPage/:category/:id" element={<SingleProductPage/>}>
             <Route path=":category" element={<SiteBar/>}/>
         </Route>
+        <Route path="/Cart" element={<CartRoute/>}/>
     </Routes>
     )
 

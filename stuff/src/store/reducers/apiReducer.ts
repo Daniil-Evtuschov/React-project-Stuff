@@ -7,7 +7,8 @@ const initialState:InitialStateInt = {
     lessProductCards:[],
     worthSeeingProductCards:[],
     searchProductCard:[],
-    relatedproducts:[]
+    relatedproducts:[],
+    cart:[]
 }
 
 
@@ -21,18 +22,10 @@ export const apiReducer = (state: InitialStateInt = initialState, action: Action
 
         case "SHOW_WORTH_SEEING_PRODUCT_CARDS":
             return{...state,worthSeeingProductCards:action.payload}
-
-        case "SHOW_SINGLE_PRODUCT_CARD":
-            return{...state,singleCard:action.payload}
-
-        case "SHOW_OTHER_PRODUCT_CARDS":
-            return{...state,otherProductCards:action.payload}
             
         case "SEARCH_FILIM_ID":
             return{...state,searchProductCard:action.payload}
 
-        case "SHOW_RELATED_PRODUCT_CARDS":
-            return{...state,relatedproducts:action.payload}
     default:
         return state
     }

@@ -25,8 +25,6 @@ export const featchTrendsProductCards = (fiveCards:string,catigory?:string|null)
     dispatch(getTrendsProductCards(data))     
 }
 
-
-
 export const featchLessProductCards = (fiveCards:string,catigory?:string|null) => async (dispatch: Dispatch)=>{
 const options = {
   method: 'GET',

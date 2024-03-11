@@ -47,7 +47,7 @@ const Header = () => {
                 </div>
             </Link>
             
-            <Link to = {''}>
+            <Link to = {'/Cart'}>
                 <span className={headerStyle.headerIcon}><Cart className={headerStyle.cart}/></span>
             </Link>  
         </div>

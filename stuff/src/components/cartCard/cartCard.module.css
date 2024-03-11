@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 15px;
+    margin-bottom: 20px;
 }
 
 .discriptionWrap{
@@ -20,13 +21,13 @@
     justify-content: space-between;
     flex-direction: column;
     margin-left: 15px;
+    margin-right: 15px;
 }
 
 .imgWrap{
     background-color: #ffff;
     border-radius: 10px;
-    max-width: 100px;
-
+    max-width: 200px;
 }
 
 .imgWrap img{
@@ -113,5 +114,5 @@
 
 .deleteProducet{
     margin-left: 45px;
+    cursor: pointer;
 }
-

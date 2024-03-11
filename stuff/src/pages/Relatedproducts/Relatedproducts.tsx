@@ -14,7 +14,7 @@ const Relatedproducts = () => {
   const {category,id} = useParams()
   useEffect(()=>{dispatch(featchRelatedproducts('5',`/category/${category}`) as any)},[]);
 
-  const trendsProductcards =  useTypeSelector((state)=>state.Api.relatedproducts)   
+  const trendsProductcards =  useTypeSelector((state)=>state.SingleCard.relatedproducts)   
   const [length ,SetLength] = useState(true);
 
   useEffect(()=>{
